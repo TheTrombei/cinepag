@@ -54,6 +54,11 @@
         .movie-card-info {
             background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 20%, rgba(0, 0, 0, 0));
         }
+        
+        /* Estilo para el iframe del tráiler para que no capture los clics */
+        .trailer-iframe {
+            pointer-events: none;
+        }
 
         /* Custom scrollbar */
         ::-webkit-scrollbar {
@@ -125,24 +130,24 @@
 
     <main>
         <section id="hero-carousel" class="relative h-screen w-full overflow-hidden">
-            <div class="absolute top-0 left-0 w-full h-full carousel-item opacity-0">
-                <img src="https://image.tmdb.org/t/p/original/rMvPXy8PUjj1o8o1pzgQbdNCsvj.jpg" class="w-full h-full object-cover" alt="Película destacada 1">
+             <div class="absolute top-0 left-0 w-full h-full carousel-item opacity-0">
+                <img src="mortal.jpg" class="w-full h-full object-cover" alt="Película destacada 1">
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent"></div>
             </div>
             <div class="absolute top-0 left-0 w-full h-full carousel-item opacity-0">
-                <img src="https://image.tmdb.org/t/p/original/1XDDXPXGiI8id7MrSStOWUpvyvJ.jpg" class="w-full h-full object-cover" alt="Película destacada 2">
+                <img src="mario.jpeg" class="w-full h-full object-cover" alt="Película destacada 2">
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent"></div>
             </div>
             <div class="absolute top-0 left-0 w-full h-full carousel-item opacity-0">
-                <img src="https://image.tmdb.org/t/p/original/628Dep6AxEtDxjZoGP78TsOxYbK.jpg" class="w-full h-full object-cover" alt="Película destacada 3">
+                <img src="logan.jpeg" class="w-full h-full object-cover" alt="Película destacada 3">
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent"></div>
             </div>
              <div class="absolute top-0 left-0 w-full h-full carousel-item opacity-0">
-                <img src="https://image.tmdb.org/t/p/original/A2sQNBtToaK4c5sD3dTVe45XAC.jpg" class="w-full h-full object-cover" alt="Película destacada 4">
+                <img src="stran.jpeg" class="w-full h-full object-cover" alt="Película destacada 4">
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent"></div>
             </div>
              <div class="absolute top-0 left-0 w-full h-full carousel-item opacity-0">
-                <img src="https://image.tmdb.org/t/p/original/5i6SjyDbDWqyun8klUuCxrlFbyw.jpg" class="w-full h-full object-cover" alt="Película destacada 5">
+                <img src="mad.jpg" class="w-full h-full object-cover" alt="Película destacada 5">
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent"></div>
             </div>
 
@@ -286,11 +291,11 @@
             const carouselDescription = document.getElementById('carousel-description');
             
             const carouselData = [
-                { title: 'Dune: Part Two', description: 'Paul Atreides se une a los Fremen y comienza un viaje espiritual y marcial para convertirse en Muad\'Dib.' },
-                { title: 'Blade Runner 2049', description: 'Un joven blade runner descubre un secreto largamente enterrado que podría sumir en el caos lo que queda de la sociedad.' },
-                { title: 'Logan', description: 'En un futuro cercano, un cansado Logan cuida de un enfermo Profesor X en un escondite en la frontera mexicana.' },
-                { title: 'Spider-Man: No Way Home', description: 'Con la identidad de Spider-Man ahora revelada, Peter Parker pide ayuda al Doctor Strange.' },
-                { title: 'Mad Max: Fury Road', description: 'En un páramo desértico, una mujer se rebela contra un tirano en busca de su patria con la ayuda de un vagabundo.' }
+                { title: 'Mortal Kombat', description: 'Explora los límites de la humanidad en una aventura a través de la galaxia digital.' },
+                { title: 'Super Mario', description: 'Un detective desilusionado persigue a un criminal fantasma en las lluviosas calles de una metrópolis de neón.' },
+                { title: 'Logan', description: 'Científicos descubren un eco del futuro, desatando una paradoja que amenaza la realidad misma.' },
+                { title: 'Stranger Things', description: 'En un mundo virtual, un joven corredor debe ganar la carrera más peligrosa para salvar a su familia.' },
+                { title: 'Mad Max', description: 'Una hacker de élite se infiltra en la corporación más poderosa del mundo, solo para descubrir una conspiración mortal.' }
             ];
 
             let currentSlide = 0;
@@ -317,34 +322,41 @@
             // --- Movie Data & Card Generation ---
             const movieData = {
                  "novedades": [
-                     { "title": "mortal kombat", "image": "https://m.media-amazon.com/images/I/71x7-WLiF6L._UF1000,1000_QL80_.jpg", "rating": "R", "duration": "1h 55min", "synopsis": "Un combate mortal." },
-                     { "title": "super mario", "image": "https://moviepostermexico.com/cdn/shop/products/super_mario_bros_the_movie_ver10_xxlg_1024x1024@2x.jpg?v=1676077754", "rating": "PG", "duration": "2h 10min", "synopsis": "Un fontanero salva a todo un reino." },
-                     { "title": "Logan", "image": "https://m.media-amazon.com/images/I/91WgnhSHyzL.jpg", "rating": "R", "duration": "1h 45min", "synopsis": "un ex super heroe viejo lucha por sobrevivir tras un desastre." },
-                     { "title": "stranger things", "image": "https://i5.walmartimages.com/seo/Stranger-Things-1-2-3-4-TV-Show-Poster-Poster-Montage-Size-24-x-36_492b83d3-7bda-4690-8c42-e69f52509519.29d8248db49716e23dc9aaa6af4e7edc.jpeg", "rating": "PG-13", "duration": "2h 05min", "synopsis": "Un pueblo es asotado por peligros desconocidos." },
-                     { "title": "Mad max", "image": "https://vice-press.com/cdn/shop/files/mad-max-fury-road-poster-matt-ferguson.jpg?v=1689066490&width=1024", "rating": "R", "duration": "2h 30min", "synopsis": "Un mundo post-apocalíptico donde la supervivencia es la única ley." }
+                     { "title": "mortal kombat", "image": "https://m.media-amazon.com/images/I/71x7-WLiF6L._UF1000,1000_QL80_.jpg", "rating": "R", "duration": "1h 55min", "synopsis": "Un combate mortal.", "trailerId": "j_hS_qS4iA0" },
+                     { "title": "super mario", "image": "https://moviepostermexico.com/cdn/shop/products/super_mario_bros_the_movie_ver10_xxlg_1024x1024@2x.jpg?v=1676077754", "rating": "PG", "duration": "2h 10min", "synopsis": "Un fontanero salva a todo un reino.", "trailerId": "oA-v4y_y2MY" },
+                     { "title": "Logan", "image": "https://m.media-amazon.com/images/I/91WgnhSHyzL.jpg", "rating": "R", "duration": "1h 45min", "synopsis": "un ex super heroe viejo lucha por sobrevivir tras un desastre.", "trailerId": "Div0iP65aVY" },
+                     { "title": "stranger things", "image": "https://i5.walmartimages.com/seo/Stranger-Things-1-2-3-4-TV-Show-Poster-Poster-Montage-Size-24-x-36_492b83d3-7bda-4690-8c42-e69f52509519.29d8248db49716e23dc9aaa6af4e7edc.jpeg", "rating": "PG-13", "duration": "2h 05min", "synopsis": "Un pueblo es asotado por peligros desconocidos.", "trailerId": "b9EkMc79ZSU" },
+                     { "title": "Frankenstein", "image": "https://hips.hearstapps.com/hmg-prod/images/frankenstein-656f02e9569a9.jpg?crop=1.00xw:0.502xh;0,0.175xh&resize=1200:*", "rating": "R", "duration": "Próxima", "synopsis": "La visión gótica de Guillermo del Toro sobre el monstruo clásico y su trágica existencia.", "trailerId": "dQw4w9WgXcQ" }
                  ],
                  "series": [
-                     { "title": "Daredevil", "image": "https://ew.com/thmb/Cs7mQgnTncAes8vQNKfaiP3qZzk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/daredevil-season-2-ca880dc528a94fb99098ecd3126eca5e.jpg", "rating": "R", "duration": "8 Episodios", "synopsis": "Un abogado ciego lucha contra el crimen en Hell's Kitchen." },
-                     { "title": "Better Call Saul", "image": "https://moviepostermexico.com/cdn/shop/products/better_call_saul_ver6_xxlg_1024x1024@2x.jpg?v=1604505714", "rating": "R", "duration": "10 Episodios", "synopsis": "Un abogado busca redimirse mientras navega por el mundo criminal." },
-                     { "title": "Bob Esponja", "image": "https://media.printler.com/media/photo/166519.jpg?rmode=crop&width=638&height=900", "rating": "TV-MA", "duration": "6 Episodios", "synopsis": "Las aventuras de un marino y su amigo en el fondo del mar." },
-                     { "title": "Sandman", "image": "https://www.mubis.es/media/users/6603/301452/the-sandman-poster-original.jpg", "rating": "TV-14", "duration": "12 Episodios", "synopsis": "Las historias de Morfeo, el rey de los sueños, y su lucha por recuperar lo que le fue robado." },
-                     { "title": "La Casa De Los Dibujos", "image": "https://pics.filmaffinity.com/drawn_together_tv_series-796666297-mmed.jpg", "rating": "R", "duration": "9 Episodios", "synopsis": "Un Reality show fuera de lo comun con tus personajes animados favoritos." }
+                     { "title": "Daredevil", "image": "https://ew.com/thmb/Cs7mQgnTncAes8vQNKfaiP3qZzk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/daredevil-season-2-ca880dc528a94fb99098ecd3126eca5e.jpg", "rating": "R", "duration": "8 Episodios", "synopsis": "Un abogado ciego lucha contra el crimen en Hell's Kitchen.", "trailerId": "jAy6NJ_D5vU" },
+                     { "title": "Better Call Saul", "image": "https://moviepostermexico.com/cdn/shop/products/better_call_saul_ver6_xxlg_1024x1024@2x.jpg?v=1604505714", "rating": "R", "duration": "10 Episodios", "synopsis": "Un abogado busca redimirse mientras navega por el mundo criminal.", "trailerId": "HN4on1l2s6Y" },
+                     { "title": "Bob Esponja", "image": "https://media.printler.com/media/photo/166519.jpg?rmode=crop&width=638&height=900", "rating": "TV-MA", "duration": "6 Episodios", "synopsis": "Las aventuras de un marino y su amigo en el fondo del mar.", "trailerId": "a2CowHH2ASk" },
+                     { "title": "Sandman", "image": "https://www.mubis.es/media/users/6603/301452/the-sandman-poster-original.jpg", "rating": "TV-14", "duration": "12 Episodios", "synopsis": "Las historias de Morfeo, el rey de los sueños, y su lucha por recuperar lo que le fue robado.", "trailerId": "83ClbRPRDXU" },
+                     { "title": "La Casa De Los Dibujos", "image": "https://pics.filmaffinity.com/drawn_together_tv_series-796666297-mmed.jpg", "rating": "R", "duration": "9 Episodios", "synopsis": "Un Reality show fuera de lo comun con tus personajes animados favoritos.", "trailerId": "m_Ld842y49g" }
                  ],
                  "peliculas": [
-                     { "title": "Spencer", "image": "https://i.guim.co.uk/img/media/bdec8d133a1d3d4fb696b1df4543e3f362da11b8/0_0_2701_4000/master/2701.jpg?width=700&quality=85&auto=format&fit=max&s=133e5baa62658b658e106807efaf52ad", "rating": "R", "duration": "2h 15min", "synopsis": "Un biopic sobre la vida de Lady Di." },
-                     { "title": "Sing Street", "image": "https://i.ebayimg.com/images/g/cg8AAOSwIopjBjWZ/s-l1200.jpg", "rating": "PG", "duration": "1h 50min", "synopsis": "Un joven forma una banda para impresionar a una chica." },
-                     { "title": "John Whick 4", "image": "https://m.media-amazon.com/images/I/81fk-N723vL._AC_UF894,1000_QL80_.jpg", "rating": "R", "duration": "2h 00min", "synopsis": "La lucha de un asesino por sobrevivir en un mundo traicionero." },
-                     { "title": "Tron Ares", "image": "https://i.ebayimg.com/images/g/FOgAAOSwS~xoCPhr/s-l1600.jpg", "rating": "PG-13", "duration": "2h 20min", "synopsis": " esta valiosa historia de Disney llega una vez más, esta vez bajo la dirección de Garth Davis, con un guion de Jesse Wigutow, y protagonizada por el ganador del Oscar Jared Leto.." },
-                     { "title": "The Brutalist", "image": "https://m.media-amazon.com/images/M/MV5BM2U0MWRjZTMtMDVhNC00MzY4LTgwOTktZGQ2MDdiYTI4OWMxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", "rating": "R", "duration": "3h 40min", "synopsis": "Tras huir de la Europa de posguerra, un arquitecto visionario llega a América para rehacer su vida.." }
+                     { "title": "Spencer", "image": "https://i.guim.co.uk/img/media/bdec8d133a1d3d4fb696b1df4543e3f362da11b8/0_0_2701_4000/master/2701.jpg?width=700&quality=85&auto=format&fit=max&s=133e5baa62658b658e106807efaf52ad", "rating": "R", "duration": "2h 15min", "synopsis": "Un biopic sobre la vida de Lady Di.", "trailerId": "Wp0oG-1tVIw" },
+                     { "title": "Sing Street", "image": "https://i.ebayimg.com/images/g/cg8AAOSwIopjBjWZ/s-l1200.jpg", "rating": "PG", "duration": "1h 50min", "synopsis": "Un joven forma una banda para impresionar a una chica.", "trailerId": "C_YqJ__wDR0" },
+                     { "title": "John Wick 4", "image": "https://m.media-amazon.com/images/I/81fk-N723vL._AC_UF894,1000_QL80_.jpg", "rating": "R", "duration": "2h 00min", "synopsis": "La lucha de un asesino por sobrevivir en un mundo traicionero.", "trailerId": "yjRHZEUamCc" },
+                     { "title": "Tron Ares", "image": "https://i.ebayimg.com/images/g/FOgAAOSwS~xoCPhr/s-l1600.jpg", "rating": "PG-13", "duration": "2h 20min", "synopsis": "Una nueva entrega de la saga de Disney, protagonizada por el ganador del Oscar Jared Leto.", "trailerId": "dQw4w9WgXcQ" },
+                     { "title": "The Brutalist", "image": "https://m.media-amazon.com/images/M/MV5BM2U0MWRjZTMtMDVhNC00MzY4LTgwOTktZGQ2MDdiYTI4OWMxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", "rating": "R", "duration": "3h 40min", "synopsis": "Tras huir de la Europa de posguerra, un arquitecto visionario llega a América para rehacer su vida.", "trailerId": "dQw4w9WgXcQ" }
                  ]
             };
             
+            // ✅ FUNCIÓN MODIFICADA PARA AÑADIR EL TRÁILER
             function createMovieCard(movie) {
+                const trailerUrl = `https://www.youtube.com/embed/${movie.trailerId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${movie.trailerId}`;
                 return `
                     <div class="group relative aspect-[2/3] rounded-lg overflow-hidden cursor-pointer transform hover:-translate-y-2 transition-transform duration-300 shadow-lg hover:shadow-fuchsia-500/40">
-                        <img src="${movie.image}" alt="${movie.title}" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                         
-                        <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 movie-card-info">
+                        <img src="${movie.image}" alt="${movie.title}" class="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0">
+                        
+                        <div class="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                           <iframe class="w-full h-full scale-[1.4]" src="${trailerUrl}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+
+                        <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 movie-card-info z-10">
                             <h3 class="font-bold text-lg text-white mb-2">${movie.title}</h3>
                             <p class="text-gray-300 text-xs mb-3 leading-snug">${movie.synopsis}</p>
                             <div class="flex justify-between items-center text-xs text-fuchsia-300 mb-4">
