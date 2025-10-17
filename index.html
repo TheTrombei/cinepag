@@ -50,30 +50,17 @@
         .carousel-item {
             transition: opacity 1s ease-in-out;
         }
-
-        .movie-card-info {
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 20%, rgba(0, 0, 0, 0));
-        }
         
-        /* Estilo para el iframe del tráiler para que no capture los clics */
-        .trailer-iframe {
-            pointer-events: none;
+        /* ✅ MODIFICADO: Gradiente mejorado para mayor visibilidad del tráiler */
+        .movie-card-info {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 10%, transparent 60%);
         }
 
         /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0a0a1a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #a855f7;
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #c026d3;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a1a; }
+        ::-webkit-scrollbar-thumb { background: #a855f7; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #c026d3; }
 
         .neon-divider {
             height: 2px;
@@ -87,9 +74,7 @@
 
     <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-colors duration-300 bg-transparent">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-3xl font-bold text-white neon-text">
-                CineFlux
-            </a>
+            <a href="#" class="text-3xl font-bold text-white neon-text">CineFlux</a>
 
             <div class="hidden md:flex items-center space-x-8">
                 <a href="#" class="text-gray-300 hover:text-fuchsia-400 transition-colors duration-300">Inicio</a>
@@ -99,17 +84,9 @@
             </div>
 
             <div class="flex items-center space-x-4">
-                 <button class="open-modal-btn hidden sm:block px-5 py-2 text-sm font-semibold text-white uppercase rounded-full neon-button">
-                    Únete ahora
-                </button>
-                
-                <button class="open-modal-btn sm:hidden px-4 py-1.5 text-xs font-semibold text-white uppercase rounded-full neon-button">
-                    Únete
-                </button>
-                
-                <button id="hamburger-button" class="md:hidden text-white focus:outline-none text-2xl">
-                    <i class="fas fa-bars"></i>
-                </button>
+                 <button class="open-modal-btn hidden sm:block px-5 py-2 text-sm font-semibold text-white uppercase rounded-full neon-button">Únete ahora</button>
+                 <button class="open-modal-btn sm:hidden px-4 py-1.5 text-xs font-semibold text-white uppercase rounded-full neon-button">Únete</button>
+                 <button id="hamburger-button" class="md:hidden text-white focus:outline-none text-2xl"><i class="fas fa-bars"></i></button>
             </div>
         </nav>
     </header>
@@ -147,76 +124,62 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent"></div>
             </div>
              <div class="absolute top-0 left-0 w-full h-full carousel-item opacity-0">
-                <img src="mad.jpg" class="w-full h-full object-cover" alt="Película destacada 5">
+                <img src="frank2.jpeg" class="w-full h-full object-cover" alt="Película destacada 5">
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent"></div>
             </div>
 
             <div class="absolute bottom-10 md:bottom-20 left-0 right-0 z-10 text-center px-6">
                 <h1 id="carousel-title" class="text-4xl md:text-6xl font-bold text-white neon-text mb-4">Título de la Película</h1>
-                <p id="carousel-description" class="max-w-3xl mx-auto text-gray-300 md:text-lg mb-8">Descripción de la película destacada. Una aventura épica en un mundo digital.</p>
-                <button class="px-8 py-3 text-lg font-semibold text-white uppercase rounded-full neon-button">
-                    <i class="fas fa-play mr-2"></i> Ver Ahora
-                </button>
+                <p id="carousel-description" class="max-w-3xl mx-auto text-gray-300 md:text-lg mb-8">Descripción de la película destacada.</p>
+                <button class="px-8 py-3 text-lg font-semibold text-white uppercase rounded-full neon-button"><i class="fas fa-play mr-2"></i> Ver Ahora</button>
             </div>
         </section>
 
         <div class="container mx-auto px-6 py-16 space-y-16">
-            
             <section id="novedades">
                 <h2 class="text-3xl font-bold text-white mb-8 border-l-4 border-fuchsia-500 pl-4">Novedades</h2>
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6" id="novedades-grid">
-                    </div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6" id="novedades-grid"></div>
             </section>
             
             <div class="neon-divider"></div>
 
             <section id="series">
                 <h2 class="text-3xl font-bold text-white mb-8 border-l-4 border-fuchsia-500 pl-4">Series de Culto</h2>
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6" id="series-grid">
-                    </div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6" id="series-grid"></div>
             </section>
             
             <div class="neon-divider"></div>
 
             <section id="peliculas">
                 <h2 class="text-3xl font-bold text-white mb-8 border-l-4 border-fuchsia-500 pl-4">Cine de Arte</h2>
-                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6" id="peliculas-grid">
-                    </div>
+                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6" id="peliculas-grid"></div>
             </section>
-
         </div>
     </main>
     
     <footer class="bg-slate-950/50 border-t border-fuchsia-500/20 mt-16">
         <div class="container mx-auto px-6 py-8 text-center text-gray-400">
-             <a href="#" class="text-2xl font-bold text-white neon-text mb-4 inline-block">
-                CineFlux
-            </a>
+            <a href="#" class="text-2xl font-bold text-white neon-text mb-4 inline-block">CineFlux</a>
             <div class="flex justify-center space-x-6 mb-4">
                 <a href="#" class="hover:text-fuchsia-400"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" class="hover:text-fuchsia-400"><i class="fab fa-twitter"></i></a>
                 <a href="#" class="hover:text-fuchsia-400"><i class="fab fa-instagram"></i></a>
             </div>
-            <p>© 2025 CineFlux. Todos los derechos reservados. El futuro del entretenimiento está aquí.</p>
+            <p>© 2025 CineFlux. Todos los derechos reservados.</p>
         </div>
     </footer>
     
     <div id="auth-modal" class="hidden fixed inset-0 bg-black bg-opacity-80 z-[100] flex items-center justify-center p-4">
-        
         <div class="bg-slate-900 rounded-lg shadow-lg w-full max-w-md p-6 md:p-8 relative neon-border">
-            
             <button id="modal-close-btn" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
-            
             <div class="text-center mb-6">
                 <h2 class="text-3xl font-bold text-white neon-text">Únete a CineFlux</h2>
                 <p class="text-fuchsia-400 mt-2 font-semibold">¡Planes desde $200 MXN al mes!</p>
             </div>
-            
             <div class="flex border-b border-slate-700 mb-6">
                 <button id="login-tab" class="flex-1 py-2 text-sm font-bold border-b-2 border-fuchsia-500 text-white">Iniciar Sesión</button>
                 <button id="register-tab" class="flex-1 py-2 text-sm font-bold border-b-2 border-transparent text-gray-400">Crear Cuenta</button>
             </div>
-            
             <form id="login-form" class="space-y-4">
                 <div>
                     <label for="login-email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
@@ -226,11 +189,8 @@
                     <label for="login-password" class="block text-sm font-medium text-gray-300 mb-1">Contraseña</label>
                     <input type="password" id="login-password" class="w-full bg-slate-800 border border-slate-600 text-white rounded-md px-3 py-2 focus:ring-fuchsia-500 focus:border-fuchsia-500" required>
                 </div>
-                <button type="submit" class="w-full mt-4 px-5 py-3 text-sm font-semibold text-white uppercase rounded-full neon-button">
-                    Entrar
-                </button>
+                <button type="submit" class="w-full mt-4 px-5 py-3 text-sm font-semibold text-white uppercase rounded-full neon-button">Entrar</button>
             </form>
-            
             <form id="register-form" class="hidden space-y-4">
                 <div>
                     <label for="register-name" class="block text-sm font-medium text-gray-300 mb-1">Nombre</label>
@@ -244,119 +204,93 @@
                     <label for="register-password" class="block text-sm font-medium text-gray-300 mb-1">Contraseña</label>
                     <input type="password" id="register-password" class="w-full bg-slate-800 border border-slate-600 text-white rounded-md px-3 py-2 focus:ring-fuchsia-500 focus:border-fuchsia-500" required>
                 </div>
-                <button type="submit" class="w-full mt-4 px-5 py-3 text-sm font-semibold text-white uppercase rounded-full neon-button">
-                    Crear mi cuenta
-                </button>
+                <button type="submit" class="w-full mt-4 px-5 py-3 text-sm font-semibold text-white uppercase rounded-full neon-button">Crear mi cuenta</button>
             </form>
-
         </div>
     </div>
-
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
     
-            // --- Header Scroll Effect ---
+            // --- General Logic (Header, Mobile Menu, Carousel) ---
             const header = document.getElementById('header');
             window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    header.classList.add('bg-slate-950/80', 'backdrop-blur-sm');
-                } else {
-                    header.classList.remove('bg-slate-950/80', 'backdrop-blur-sm');
-                }
+                header.classList.toggle('bg-slate-950/80', window.scrollY > 50);
+                header.classList.toggle('backdrop-blur-sm', window.scrollY > 50);
             });
 
-            // --- Mobile Menu ---
             const hamburgerButton = document.getElementById('hamburger-button');
             const mobileMenu = document.getElementById('mobile-menu');
             const closeMenuButton = document.getElementById('close-menu-button');
-            
-            hamburgerButton.addEventListener('click', () => {
-                mobileMenu.classList.remove('hidden');
-            });
-            
-            closeMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-
+            hamburgerButton.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
+            closeMenuButton.addEventListener('click', () => mobileMenu.classList.add('hidden'));
             mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                });
+                link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
             });
 
-            // --- Hero Carousel ---
             const carouselItems = document.querySelectorAll('.carousel-item');
             const carouselTitle = document.getElementById('carousel-title');
             const carouselDescription = document.getElementById('carousel-description');
-            
             const carouselData = [
                 { title: 'Mortal Kombat', description: 'Explora los límites de la humanidad en una aventura a través de la galaxia digital.' },
                 { title: 'Super Mario', description: 'Un detective desilusionado persigue a un criminal fantasma en las lluviosas calles de una metrópolis de neón.' },
                 { title: 'Logan', description: 'Científicos descubren un eco del futuro, desatando una paradoja que amenaza la realidad misma.' },
                 { title: 'Stranger Things', description: 'En un mundo virtual, un joven corredor debe ganar la carrera más peligrosa para salvar a su familia.' },
-                { title: 'Mad Max', description: 'Una hacker de élite se infiltra en la corporación más poderosa del mundo, solo para descubrir una conspiración mortal.' }
+                { title: 'Frankenstein', description: 'La visión gótica de un científico que da vida a una criatura en un experimento monstruoso.' }
             ];
-
             let currentSlide = 0;
-            
             function showSlide(index) {
                 if(carouselItems.length === 0) return;
-                carouselItems.forEach((item) => {
-                    item.classList.add('opacity-0');
-                });
+                carouselItems.forEach(item => item.classList.add('opacity-0'));
                 carouselItems[index].classList.remove('opacity-0');
                 carouselTitle.textContent = carouselData[index].title;
                 carouselDescription.textContent = carouselData[index].description;
             }
-
-            function nextSlide() {
-                if(carouselItems.length === 0) return;
-                currentSlide = (currentSlide + 1) % carouselItems.length;
-                showSlide(currentSlide);
+            if (carouselItems.length > 0) {
+                showSlide(0);
+                setInterval(() => {
+                    currentSlide = (currentSlide + 1) % carouselItems.length;
+                    showSlide(currentSlide);
+                }, 5000);
             }
 
-            showSlide(0);
-            setInterval(nextSlide, 5000);
-
-            // --- Movie Data & Card Generation ---
+            // --- Movie Data ---
+            // ✅ MODIFICADO: Ahora se usa "trailerUrl" para tener control total del enlace.
             const movieData = {
                  "novedades": [
-                     { "title": "mortal kombat", "image": "https://m.media-amazon.com/images/I/71x7-WLiF6L._UF1000,1000_QL80_.jpg", "rating": "R", "duration": "1h 55min", "synopsis": "Un combate mortal.", "trailerId": "j_hS_qS4iA0" },
-                     { "title": "super mario", "image": "https://moviepostermexico.com/cdn/shop/products/super_mario_bros_the_movie_ver10_xxlg_1024x1024@2x.jpg?v=1676077754", "rating": "PG", "duration": "2h 10min", "synopsis": "Un fontanero salva a todo un reino.", "trailerId": "oA-v4y_y2MY" },
-                     { "title": "Logan", "image": "https://m.media-amazon.com/images/I/91WgnhSHyzL.jpg", "rating": "R", "duration": "1h 45min", "synopsis": "un ex super heroe viejo lucha por sobrevivir tras un desastre.", "trailerId": "Div0iP65aVY" },
-                     { "title": "stranger things", "image": "https://i5.walmartimages.com/seo/Stranger-Things-1-2-3-4-TV-Show-Poster-Poster-Montage-Size-24-x-36_492b83d3-7bda-4690-8c42-e69f52509519.29d8248db49716e23dc9aaa6af4e7edc.jpeg", "rating": "PG-13", "duration": "2h 05min", "synopsis": "Un pueblo es asotado por peligros desconocidos.", "trailerId": "b9EkMc79ZSU" },
-                     { "title": "Frankenstein", "image": "https://hips.hearstapps.com/hmg-prod/images/frankenstein-656f02e9569a9.jpg?crop=1.00xw:0.502xh;0,0.175xh&resize=1200:*", "rating": "R", "duration": "Próxima", "synopsis": "La visión gótica de Guillermo del Toro sobre el monstruo clásico y su trágica existencia.", "trailerId": "dQw4w9WgXcQ" }
+                     { "title": "Mortal Kombat", "image": "https://m.media-amazon.com/images/I/71x7-WLiF6L._UF1000,1000_QL80_.jpg", "rating": "R", "duration": "1h 55min", "synopsis": "Un combate mortal.", "trailerUrl": "https://www.youtube.com/embed/j_hS_qS4iA0?autoplay=1&mute=1&controls=0&loop=1&playlist=j_hS_qS4iA0" },
+                     { "title": "Super Mario", "image": "https://moviepostermexico.com/cdn/shop/products/super_mario_bros_the_movie_ver10_xxlg_1024x1024@2x.jpg?v=1676077754", "rating": "PG", "duration": "2h 10min", "synopsis": "Un fontanero salva a todo un reino.", "trailerUrl": "https://www.youtube.com/embed/oA-v4y_y2MY?autoplay=1&mute=1&controls=0&loop=1&playlist=oA-v4y_y2MY" },
+                     { "title": "Logan", "image": "https://m.media-amazon.com/images/I/91WgnhSHyzL.jpg", "rating": "R", "duration": "1h 45min", "synopsis": "Un ex superhéroe lucha por sobrevivir tras un desastre.", "trailerUrl": "https://www.youtube.com/embed/Div0iP65aVY?autoplay=1&mute=1&controls=0&loop=1&playlist=Div0iP65aVY" },
+                     { "title": "Stranger Things", "image": "https://i5.walmartimages.com/seo/Stranger-Things-1-2-3-4-TV-Show-Poster-Poster-Montage-Size-24-x-36_492b83d3-7bda-4690-8c42-e69f52509519.29d8248db49716e23dc9aaa6af4e7edc.jpeg", "rating": "PG-13", "duration": "4 Temporadas", "synopsis": "Un pueblo es azotado por peligros desconocidos.", "trailerUrl": "https://www.youtube.com/embed/b9EkMc79ZSU?autoplay=1&mute=1&controls=0&loop=1&playlist=b9EkMc79ZSU" },
+                     { "title": "Frankenstein", "image": "https://es.digitaltrends.com/wp-content/uploads/2025/08/Frankenstein-poster-2.jpg", "rating": "R", "duration": "Próxima", "synopsis": "La visión gótica de Guillermo del Toro sobre el monstruo.", "trailerUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&controls=0&loop=1&playlist=dQw4w9WgXcQ" }
                  ],
                  "series": [
-                     { "title": "Daredevil", "image": "https://ew.com/thmb/Cs7mQgnTncAes8vQNKfaiP3qZzk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/daredevil-season-2-ca880dc528a94fb99098ecd3126eca5e.jpg", "rating": "R", "duration": "8 Episodios", "synopsis": "Un abogado ciego lucha contra el crimen en Hell's Kitchen.", "trailerId": "jAy6NJ_D5vU" },
-                     { "title": "Better Call Saul", "image": "https://moviepostermexico.com/cdn/shop/products/better_call_saul_ver6_xxlg_1024x1024@2x.jpg?v=1604505714", "rating": "R", "duration": "10 Episodios", "synopsis": "Un abogado busca redimirse mientras navega por el mundo criminal.", "trailerId": "HN4on1l2s6Y" },
-                     { "title": "Bob Esponja", "image": "https://media.printler.com/media/photo/166519.jpg?rmode=crop&width=638&height=900", "rating": "TV-MA", "duration": "6 Episodios", "synopsis": "Las aventuras de un marino y su amigo en el fondo del mar.", "trailerId": "a2CowHH2ASk" },
-                     { "title": "Sandman", "image": "https://www.mubis.es/media/users/6603/301452/the-sandman-poster-original.jpg", "rating": "TV-14", "duration": "12 Episodios", "synopsis": "Las historias de Morfeo, el rey de los sueños, y su lucha por recuperar lo que le fue robado.", "trailerId": "83ClbRPRDXU" },
-                     { "title": "La Casa De Los Dibujos", "image": "https://pics.filmaffinity.com/drawn_together_tv_series-796666297-mmed.jpg", "rating": "R", "duration": "9 Episodios", "synopsis": "Un Reality show fuera de lo comun con tus personajes animados favoritos.", "trailerId": "m_Ld842y49g" }
+                     { "title": "Daredevil", "image": "https://ew.com/thmb/Cs7mQgnTncAes8vQNKfaiP3qZzk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/daredevil-season-2-ca880dc528a94fb99098ecd3126eca5e.jpg", "rating": "R", "duration": "3 Temporadas", "synopsis": "Un abogado ciego lucha contra el crimen en Hell's Kitchen.", "trailerUrl": "https://www.youtube.com/embed/jAy6NJ_D5vU?autoplay=1&mute=1&controls=0&loop=1&playlist=jAy6NJ_D5vU" },
+                     { "title": "Better Call Saul", "image": "https://moviepostermexico.com/cdn/shop/products/better_call_saul_ver6_xxlg_1024x1024@2x.jpg?v=1604505714", "rating": "R", "duration": "6 Temporadas", "synopsis": "Un abogado busca redimirse mientras navega por el bajo mundo criminal.", "trailerUrl": "https://www.youtube.com/embed/HN4on1l2s6Y?autoplay=1&mute=1&controls=0&loop=1&playlist=HN4on1l2s6Y" },
+                     { "title": "Bob Esponja", "image": "https://media.printler.com/media/photo/166519.jpg?rmode=crop&width=638&height=900", "rating": "TV-Y7", "duration": "13 Temporadas", "synopsis": "Las aventuras de una esponja y su amigo en el fondo del mar.", "trailerUrl": "https://www.youtube.com/embed/a2CowHH2ASk?autoplay=1&mute=1&controls=0&loop=1&playlist=a2CowHH2ASk" },
+                     { "title": "Sandman", "image": "https://www.mubis.es/media/users/6603/301452/the-sandman-poster-original.jpg", "rating": "TV-MA", "duration": "1 Temporada", "synopsis": "Morfeo, el rey de los sueños, debe recuperar lo que le fue robado.", "trailerUrl": "https://www.youtube.com/embed/83ClbRPRDXU?autoplay=1&mute=1&controls=0&loop=1&playlist=83ClbRPRDXU" },
+                     { "title": "La Casa De Los Dibujos", "image": "https://pics.filmaffinity.com/drawn_together_tv_series-796666297-mmed.jpg", "rating": "TV-MA", "duration": "3 Temporadas", "synopsis": "Un reality show fuera de lo común con personajes animados.", "trailerUrl": "https://www.youtube.com/embed/m_Ld842y49g?autoplay=1&mute=1&controls=0&loop=1&playlist=m_Ld842y49g" }
                  ],
                  "peliculas": [
-                     { "title": "Spencer", "image": "https://i.guim.co.uk/img/media/bdec8d133a1d3d4fb696b1df4543e3f362da11b8/0_0_2701_4000/master/2701.jpg?width=700&quality=85&auto=format&fit=max&s=133e5baa62658b658e106807efaf52ad", "rating": "R", "duration": "2h 15min", "synopsis": "Un biopic sobre la vida de Lady Di.", "trailerId": "Wp0oG-1tVIw" },
-                     { "title": "Sing Street", "image": "https://i.ebayimg.com/images/g/cg8AAOSwIopjBjWZ/s-l1200.jpg", "rating": "PG", "duration": "1h 50min", "synopsis": "Un joven forma una banda para impresionar a una chica.", "trailerId": "C_YqJ__wDR0" },
-                     { "title": "John Wick 4", "image": "https://m.media-amazon.com/images/I/81fk-N723vL._AC_UF894,1000_QL80_.jpg", "rating": "R", "duration": "2h 00min", "synopsis": "La lucha de un asesino por sobrevivir en un mundo traicionero.", "trailerId": "yjRHZEUamCc" },
-                     { "title": "Tron Ares", "image": "https://i.ebayimg.com/images/g/FOgAAOSwS~xoCPhr/s-l1600.jpg", "rating": "PG-13", "duration": "2h 20min", "synopsis": "Una nueva entrega de la saga de Disney, protagonizada por el ganador del Oscar Jared Leto.", "trailerId": "dQw4w9WgXcQ" },
-                     { "title": "The Brutalist", "image": "https://m.media-amazon.com/images/M/MV5BM2U0MWRjZTMtMDVhNC00MzY4LTgwOTktZGQ2MDdiYTI4OWMxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", "rating": "R", "duration": "3h 40min", "synopsis": "Tras huir de la Europa de posguerra, un arquitecto visionario llega a América para rehacer su vida.", "trailerId": "dQw4w9WgXcQ" }
+                     { "title": "Spencer", "image": "https://i.guim.co.uk/img/media/bdec8d133a1d3d4fb696b1df4543e3f362da11b8/0_0_2701_4000/master/2701.jpg?width=700&quality=85&auto=format&fit=max&s=133e5baa62658b658e106807efaf52ad", "rating": "R", "duration": "2h 15min", "synopsis": "Un biopic sobre la vida de la princesa Diana.", "trailerUrl": "https://www.youtube.com/embed/Wp0oG-1tVIw?autoplay=1&mute=1&controls=0&loop=1&playlist=Wp0oG-1tVIw" },
+                     { "title": "Sing Street", "image": "https://i.ebayimg.com/images/g/cg8AAOSwIopjBjWZ/s-l1200.jpg", "rating": "PG-13", "duration": "1h 50min", "synopsis": "Un joven forma una banda para impresionar a una chica.", "trailerUrl": "https://www.youtube.com/embed/C_YqJ__wDR0?autoplay=1&mute=1&controls=0&loop=1&playlist=C_YqJ__wDR0" },
+                     { "title": "John Wick 4", "image": "https://m.media-amazon.com/images/I/81fk-N723vL._AC_UF894,1000_QL80_.jpg", "rating": "R", "duration": "2h 49min", "synopsis": "La lucha de un asesino por sobrevivir en un mundo traicionero.", "trailerUrl": "https://www.youtube.com/embed/yjRHZEUamCc?autoplay=1&mute=1&controls=0&loop=1&playlist=yjRHZEUamCc" },
+                     { "title": "Tron: Ares", "image": "https://i.ebayimg.com/images/g/FOgAAOSwS~xoCPhr/s-l1600.jpg", "rating": "PG-13", "duration": "Próxima", "synopsis": "Una nueva entrega de la saga de Disney, protagonizada por Jared Leto.", "trailerUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&controls=0&loop=1&playlist=dQw4w9WgXcQ" },
+                     { "title": "The Brutalist", "image": "https://m.media-amazon.com/images/M/MV5BM2U0MWRjZTMtMDVhNC00MzY4LTgwOTktZGQ2MDdiYTI4OWMxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", "rating": "R", "duration": "Próxima", "synopsis": "Un arquitecto visionario llega a América para rehacer su vida.", "trailerUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&controls=0&loop=1&playlist=dQw4w9WgXcQ" }
                  ]
             };
             
-            // ✅ FUNCIÓN MODIFICADA PARA AÑADIR EL TRÁILER
+            // ✅ FUNCIÓN MODIFICADA: Simplificada y con mejor visibilidad del tráiler.
             function createMovieCard(movie) {
-                const trailerUrl = `https://www.youtube.com/embed/${movie.trailerId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${movie.trailerId}`;
                 return `
                     <div class="group relative aspect-[2/3] rounded-lg overflow-hidden cursor-pointer transform hover:-translate-y-2 transition-transform duration-300 shadow-lg hover:shadow-fuchsia-500/40">
-                        
                         <img src="${movie.image}" alt="${movie.title}" class="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0">
                         
-                        <div class="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                           <iframe class="w-full h-full scale-[1.4]" src="${trailerUrl}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <div class="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                           <iframe class="w-full h-full scale-[1.4]" src="${movie.trailerUrl}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                         </div>
 
-                        <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 movie-card-info z-10">
+                        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 movie-card-info z-10">
                             <h3 class="font-bold text-lg text-white mb-2">${movie.title}</h3>
                             <p class="text-gray-300 text-xs mb-3 leading-snug">${movie.synopsis}</p>
                             <div class="flex justify-between items-center text-xs text-fuchsia-300 mb-4">
@@ -371,20 +305,22 @@
                 `;
             }
 
-            const novedadesGrid = document.getElementById('novedades-grid');
-            const seriesGrid = document.getElementById('series-grid');
-            const peliculasGrid = document.getElementById('peliculas-grid');
+            const grids = {
+                'novedades-grid': movieData.novedades,
+                'series-grid': movieData.series,
+                'peliculas-grid': movieData.peliculas
+            };
 
-            if(novedadesGrid) movieData.novedades.forEach(movie => novedadesGrid.innerHTML += createMovieCard(movie));
-            if(seriesGrid) movieData.series.forEach(movie => seriesGrid.innerHTML += createMovieCard(movie));
-            if(peliculasGrid) movieData.peliculas.forEach(movie => peliculasGrid.innerHTML += createMovieCard(movie));
+            for (const gridId in grids) {
+                const gridElement = document.getElementById(gridId);
+                if (gridElement) {
+                    gridElement.innerHTML = grids[gridId].map(createMovieCard).join('');
+                }
+            }
 
-
-            // --- Modal de Autenticación ---
+            // --- Modal Logic ---
             const authModal = document.getElementById('auth-modal');
-            const openModalBtns = document.querySelectorAll('.open-modal-btn');
             const closeModalBtn = document.getElementById('modal-close-btn');
-
             const loginTab = document.getElementById('login-tab');
             const registerTab = document.getElementById('register-tab');
             const loginForm = document.getElementById('login-form');
@@ -394,30 +330,19 @@
                 authModal.classList.remove('hidden');
                 mobileMenu.classList.add('hidden');
             };
+            const closeModal = () => authModal.classList.add('hidden');
 
-            const closeModal = () => {
-                authModal.classList.add('hidden');
-            };
-
-            openModalBtns.forEach(btn => {
-                btn.addEventListener('click', openModal);
-            });
-
+            document.querySelectorAll('.open-modal-btn').forEach(btn => btn.addEventListener('click', openModal));
             closeModalBtn.addEventListener('click', closeModal);
-
             authModal.addEventListener('click', (event) => {
-                if (event.target === authModal) {
-                    closeModal();
-                }
+                if (event.target === authModal) closeModal();
             });
 
             loginTab.addEventListener('click', () => {
                 loginTab.classList.add('border-fuchsia-500', 'text-white');
                 loginTab.classList.remove('border-transparent', 'text-gray-400');
-                
-                registerTab.classList.add('border-transparent', 'text-gray-400');
                 registerTab.classList.remove('border-fuchsia-500', 'text-white');
-
+                registerTab.classList.add('border-transparent', 'text-gray-400');
                 loginForm.classList.remove('hidden');
                 registerForm.classList.add('hidden');
             });
@@ -425,10 +350,8 @@
             registerTab.addEventListener('click', () => {
                 registerTab.classList.add('border-fuchsia-500', 'text-white');
                 registerTab.classList.remove('border-transparent', 'text-gray-400');
-                
-                loginTab.classList.add('border-transparent', 'text-gray-400');
                 loginTab.classList.remove('border-fuchsia-500', 'text-white');
-
+                loginTab.classList.add('border-transparent', 'text-gray-400');
                 registerForm.classList.remove('hidden');
                 loginForm.classList.add('hidden');
             });
